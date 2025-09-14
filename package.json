@@ -1,0 +1,29 @@
+{
+  "name": "booking-app",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "pnpm --parallel --recursive dev",
+    "build": "pnpm --recursive build",
+    "lint": "pnpm --recursive lint",
+    "type-check": "pnpm --recursive type-check",
+    "clean": "pnpm --recursive clean",
+    "host-ui:dev": "pnpm --filter host-ui dev",
+    "guest-ui:dev": "pnpm --filter guest-ui dev",
+    "host-ui:build": "pnpm --filter host-ui build",
+    "guest-ui:build": "pnpm --filter guest-ui build"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.2",
+    "vite": "^4.4.9",
+    "@types/node": "^20.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "packageManager": "pnpm@8.15.0"
+}
