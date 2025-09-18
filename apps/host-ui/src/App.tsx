@@ -1,10 +1,8 @@
-import { useState } from "react";
-import "./index.css";
+// @components
+import AccomodationAddition from "./pages/add-accomodation/AccomodationAddition";
 
 function App() {
-  const [count, setCount] = useState(0);
-
-  return <></>;
+  return <AccomodationAddition />;
 }
 
 export default App;

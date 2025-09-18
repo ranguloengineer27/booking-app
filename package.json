@@ -14,7 +14,8 @@
     "host-ui:dev": "pnpm --filter host-ui dev",
     "guest-ui:dev": "pnpm --filter guest-ui dev",
     "host-ui:build": "pnpm --filter host-ui build",
-    "guest-ui:build": "pnpm --filter guest-ui build"
+    "guest-ui:build": "pnpm --filter guest-ui build",
+    "shared-ui:build": "pnpm --filter shared-ui build"
   },
   "devDependencies": {
     "typescript": "^5.2.2",
