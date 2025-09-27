@@ -12,6 +12,7 @@
   "dependencies": {
     "@booking-app/shared-ui": "workspace:^",
     "@booking-app/auth": "workspace:^",
+    "@booking-app/api": "workspace:^",
     "@supabase/supabase-js": "^2.57.4",
     "@tanstack/react-query": "^5.89.0",
     "@tanstack/react-query-devtools": "^5.89.0",

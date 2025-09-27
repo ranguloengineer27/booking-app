@@ -1,23 +1,30 @@
-import React from 'react';
-import { useState } from 'react'
-import './App.css'
+import { useEffect, useState } from "react";
+import "./App.css";
+import AccomodationsContainer from "./components/AccomodationsContainer/AccomodationsContainer";
+import { SupabaseManager } from "@booking-app/auth";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [clientLoad, setClientLoad] = useState(false);
+
+  /* useEffect(() => {
+    if (!clientLoad) {
+      console.log("Initializing Supabase...");
+      SupabaseManager.init(
+        import.meta.env.VITE_SUPABASE_URL,
+        import.meta.env.VITE_SUPABASE_ANON_KEY
+      );
+
+      setClientLoad(true);
+    }
+  }, [clientLoad]);
+
+  console.error("RENDER APP CLIENTLOAD ::::::", clientLoad); */
 
   return (
     <>
-      <div>
-        <h1>Guest UI</h1>
-        <p>Welcome to the guest booking interface!</p>
-        <div className="card">
-          <button onClick={() => setCount((count) => count + 1)}>
-            count is {count}
-          </button>
-        </div>
-      </div>
+      <AccomodationsContainer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

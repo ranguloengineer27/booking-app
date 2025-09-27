@@ -13,8 +13,13 @@
   },
   "dependencies": {
     "@booking-app/shared-ui": "workspace:^",
+    "@booking-app/auth": "workspace:^",
+    "@booking-app/api": "workspace:^",
+    "@tanstack/react-query": "^5.89.0",
+    "@tanstack/react-query-devtools": "^5.89.0",
     "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "react-dom": "^19.1.1",
+    "tailwindcss": "^4.1.13"
   },
   "devDependencies": {
     "@eslint/js": "^9.33.0",

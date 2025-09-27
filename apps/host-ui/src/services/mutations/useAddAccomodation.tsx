@@ -1,14 +1,14 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { supabaseClient } from "../supabaseClient";
 import type { AccomodationCreateType } from "@/types/accomodationTypes";
+import { SupabaseManager } from "@booking-app/auth";
 
-export interface Accommodation {
+export type Accommodation = {
   id: number;
   title: string;
   description: string;
   price: string;
   location: string;
-}
+};
 
 export const useAddAccommodation = () => {
   const queryClient = useQueryClient();
@@ -16,14 +16,16 @@ export const useAddAccommodation = () => {
   return useMutation({
     mutationKey: ["addAccommodation"],
     mutationFn: async (newAccommodation: AccomodationCreateType) => {
-      const { data, error } = await supabaseClient
-        .from("accommodation")
+      const SUPABASE_CLIENT = SupabaseManager.get();
+      if (!SUPABASE_CLIENT) return [];
+
+      const response = await SUPABASE_CLIENT.from("accommodation")
         .insert([newAccommodation])
         .select();
 
-      if (error) throw error;
+      if (response?.error) throw response.error;
 
-      return data ?? [];
+      return response?.data ?? [];
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["accommodation"] });

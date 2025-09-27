@@ -4,8 +4,8 @@ import { cn } from "@booking-app/shared-ui";
 import type { FormState } from "./AccomodationAdditionFormTypes";
 import { DEFAULT_FORM_STATE, formFields } from "./AccomodationAdditionFormCons";
 import { isRequired, isValidPrice } from "./AccomodationAdditionFormUtils";
-import { useAddAccommodation } from "@/services/mutations/useAddAccomodation";
 import { useAuthContext } from "@booking-app/auth";
+import { useAddAccommodation } from "@/services/mutations/useAddAccomodation";
 
 const validators: {
   [K in keyof FormState]: (value: string) => string | null;
@@ -18,7 +18,6 @@ const validators: {
 
 export const AccomodationAdditionForm: React.FC = () => {
   const { user } = useAuthContext();
-  //  console.log("user data :::", user);
   const [formValues, setFormValues] = useState<FormState>(DEFAULT_FORM_STATE);
   const addAccommodation = useAddAccommodation();
 

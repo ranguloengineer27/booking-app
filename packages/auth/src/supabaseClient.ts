@@ -9,7 +9,7 @@ export class SupabaseManager {
 
   public static get = () => {
     if (!SupabaseManager.supabase) {
-      console.error(
+      throw new Error(
         "Supabase client has not been initialized. Call initSupabaseClient first."
       );
     }
@@ -17,22 +17,8 @@ export class SupabaseManager {
   };
 }
 
-/* export function initSupabaseClient(url: string, anonKey: string) {
-  let supabase: SupabaseClient | null = null;
+const SUPABASE_URL = "https://xwvxjdglxeyglouzfzqd.supabase.co";
+const SUPABASE_ANON_KEY =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh3dnhqZGdseGV5Z2xvdXpmenFkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTc2MDcyNjgsImV4cCI6MjA3MzE4MzI2OH0.T4g-k-50SwZaQ8aL-mMyxr5bB4ObukcsVWwkBqqmEuM";
 
-  return () => {
-    if (supabase) return;
-    supabase = createClient(url, anonKey);
-    return supabase;
-  };
-} */
-
-/* export function getSupabaseClient() {
-  if (!supabase) {
-    throw new Error(
-      "Supabase client has not been initialized. Call initSupabaseClient first."
-    );
-  }
-  return supabase;
-}
- */
+SupabaseManager.init(SUPABASE_URL, SUPABASE_ANON_KEY);

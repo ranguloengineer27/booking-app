@@ -11,17 +11,19 @@
     "lint": "pnpm --recursive lint",
     "type-check": "pnpm --recursive type-check",
     "clean": "pnpm --recursive clean",
-    "host-ui:dev": "pnpm --filter host-ui dev",
-    "guest-ui:dev": "pnpm --filter guest-ui dev",
-    "host-ui:build": "pnpm --filter host-ui build",
-    "guest-ui:build": "pnpm --filter guest-ui build",
-    "shared-ui:build": "pnpm --filter shared-ui build",
-    "auth:build": "pnpm --filter @booking-app/auth build"
+    "host-ui:dev": "pnpm --filter @booking-app/host-ui dev",
+    "guest-ui:dev": "pnpm --filter @booking-app/guest-ui dev",
+    "host-ui:build": "pnpm --filter @booking-app/host-ui build",
+    "guest-ui:build": "pnpm --filter @booking-app/guest-ui build",
+    "shared-ui:build": "pnpm --filter @booking-app/shared-ui build",
+    "auth:build": "pnpm --filter @booking-app/auth build",
+    "api:build": "pnpm --filter @booking-app/api build"
   },
   "devDependencies": {
+    "@types/node": "^20.0.0",
+    "tsup": "^8.0.0",
     "typescript": "^5.2.2",
-    "vite": "^4.4.9",
-    "@types/node": "^20.0.0"
+    "vite": "^4.4.9"
   },
   "engines": {
     "node": ">=18.0.0",
